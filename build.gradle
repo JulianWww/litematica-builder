@@ -11,11 +11,13 @@ base {
 }
 
 repositories {
-	// Add repositories to retrieve artifacts from in here.
-	// You should only use this when depending on other mods because
-	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// for more information about repositories.
+	mavenCentral()
+	flatDir {
+        dirs './libs'
+    }
+    maven { url 'https://masa.dy.fi/maven/' }
+    maven { url = "https://www.cursemaven.com" }
+    maven { url 'https://maven.terraformersmc.com/releases/' }
 }
 
 loom {
@@ -41,8 +43,14 @@ dependencies {
 	
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
+	
+	modCompileOnly "com.terraformersmc:modmenu:${project.mod_menu_version}"
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
+	modImplementation name: "baritone-unoptimized-fabric-1.10.1"
+	modImplementation name: "baritone-unoptimized-1.10.1"
+	modImplementation "fi.dy.masa.malilib:malilib-fabric-1.20.1:0.16.2"
+	modImplementation "curse.maven:litematica-308892:${project.litematica_fileid}"
 }
 
 processResources {

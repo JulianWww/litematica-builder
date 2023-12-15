@@ -1,0 +1,3 @@
+[submodule "litematica/litematica"]
+	path = litematica/litematica
+	url = https://github.com/maruohon/litematica
