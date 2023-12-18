@@ -16,6 +16,8 @@ repositories {
     }
 	mavenCentral()
 	maven { url 'https://jitpack.io' }
+	maven { url 'https://masa.dy.fi/maven/' }
+	maven { url 'https://maven.terraformersmc.com/releases/' }
 }
 
 loom {
@@ -44,8 +46,11 @@ dependencies {
 
 	modImplementation name: 'baritone-unoptimized-fabric-1.10.1'
 	modImplementation name: 'baritone-unoptimized-1.10.1'
-	modImplementation name: "litematica-fabric-1.20.2-0.16.0-dev"
+	modImplementation name: "litematica-fabric-1.20.2-0.16.0"
+	modImplementation "fi.dy.masa.malilib:malilib-fabric-1.20.2:0.16.0"
+	modCompileOnly "com.terraformersmc:modmenu:${project.mod_menu_version}"
 }
+
 
 processResources {
 	inputs.property "version", project.version

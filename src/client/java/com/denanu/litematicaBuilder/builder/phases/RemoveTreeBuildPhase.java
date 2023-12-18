@@ -3,8 +3,6 @@ package com.denanu.litematicaBuilder.builder.phases;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.annotation.Nullable;
-
 import com.denanu.litematicaBuilder.LitematicaBuilderModClient;
 import com.denanu.litematicaBuilder.utils.blocks.BlockTypes;
 import com.denanu.litematicaBuilder.utils.math.BetterBlockBox;
@@ -29,10 +27,10 @@ public class RemoveTreeBuildPhase extends BuildPhase {
 	}
 	
 	@Override
-	@Nullable
+	@org.jetbrains.annotations.Nullable
 	public PathingCommand onTick(boolean calcFailed, boolean isSafeToCancel, SchematicPlacement placement) {
-		GoalBlock goal = new GoalBlock(this.target);
-		return new PathingCommand(goal, PathingCommandType.SET_GOAL_AND_PATH);
+		//GoalBlock goal = new GoalBlock(this.target);
+		return new PathingCommand(null, PathingCommandType.SET_GOAL_AND_PATH);
 	}
 
 	@Override
